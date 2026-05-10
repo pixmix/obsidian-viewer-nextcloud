@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"g1","type":"group","x":-20,"y":-40,"width":560,"height":180,"label":"Getting started"},
+		{"id":"1","type":"text","text":"# Start here\nThis is a **text card** with markdown.\n- Item one\n- Item two","x":0,"y":0,"width":240,"height":120,"color":"4"},
+		{"id":"2","type":"text","text":"Then go here\n\nWith some `inline code`","x":300,"y":0,"width":220,"height":120},
+		{"id":"3","type":"file","file":"Welcome.md","x":0,"y":220,"width":300,"height":200},
+		{"id":"4","type":"file","file":"Project Notes.md","x":340,"y":220,"width":300,"height":200,"color":"6"},
+		{"id":"5","type":"link","url":"https://obsidian.md","x":0,"y":480,"width":280,"height":200},
+		{"id":"8","type":"link","url":"/login","x":680,"y":340,"width":260,"height":200},
+		{"id":"6","type":"text","text":"A coloured note","x":340,"y":480,"width":200,"height":80,"color":"2"},
+		{"id":"7","type":"file","file":"subfolder/Nested Note.md","x":680,"y":100,"width":260,"height":180,"color":"1"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"1","toNode":"2","fromSide":"right","toSide":"left"},
+		{"id":"e2","fromNode":"2","toNode":"3","fromSide":"bottom","toSide":"top","label":"read this"},
+		{"id":"e3","fromNode":"1","toNode":"3","fromSide":"bottom","toSide":"top"},
+		{"id":"e4","fromNode":"3","toNode":"5","fromSide":"bottom","toSide":"top","color":"4"},
+		{"id":"e5","fromNode":"4","toNode":"6","fromSide":"bottom","toSide":"top"},
+		{"id":"e6","fromNode":"2","toNode":"7","fromSide":"right","toSide":"left","label":"also see","color":"1"},
+		{"id":"e7","fromNode":"3","toNode":"4","fromSide":"right","toSide":"left","fromEnd":"arrow","toEnd":"arrow"}
+	]
+}

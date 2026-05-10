@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+	<id>obsidian_viewer</id>
+	<name>Obsidian Viewer</name>
+	<summary>Read-only viewer for Obsidian vaults</summary>
+	<description><![CDATA[Browse and read Obsidian vaults stored in your Nextcloud files. Renders markdown with Obsidian-flavoured syntax, graph view, and canvas support. No editing — pure visualisation.]]></description>
+	<version>0.8.4</version>
+	<licence>agpl</licence>
+	<author>Pietro Mincuzzi</author>
+	<namespace>ObsidianViewer</namespace>
+	<category>files</category>
+	<dependencies>
+		<nextcloud min-version="31" max-version="32"/>
+	</dependencies>
+	<navigations>
+		<navigation>
+			<name>Obsidian Viewer</name>
+			<route>obsidian_viewer.page.index</route>
+			<order>10</order>
+			<icon>app.svg</icon>
+		</navigation>
+	</navigations>
+</info>

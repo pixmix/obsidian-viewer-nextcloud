@@ -1,0 +1,24 @@
+# Dependencies
+custom_apps/obsidian_viewer/node_modules/
+
+# Build artefacts (reproducible via `npm run build`)
+custom_apps/obsidian_viewer/js/
+custom_apps/obsidian_viewer/css/
+*.map
+
+# Packaged tarballs (reproducible via packaging command)
+*.tar.gz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Docker persistent volumes (managed by Docker)
+# db_data and nc_data are named volumes, not on disk here
+
+# Sandbox / scratch vaults used during development (not test_vault)
+sandbox_vault/
+theme_dev_vault/
