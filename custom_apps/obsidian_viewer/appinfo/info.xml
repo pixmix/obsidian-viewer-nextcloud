@@ -5,7 +5,7 @@
 	<name>Obsidian Viewer</name>
 	<summary>Read-only viewer for Obsidian vaults</summary>
 	<description><![CDATA[Browse and read Obsidian vaults stored in your Nextcloud files. Renders markdown with Obsidian-flavoured syntax, graph view, and canvas support. No editing — pure visualisation.]]></description>
-	<version>0.8.4</version>
+	<version>0.8.8</version>
 	<licence>agpl</licence>
 	<author>Pietro Mincuzzi</author>
 	<namespace>ObsidianViewer</namespace>

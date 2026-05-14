@@ -4,7 +4,7 @@
 			<div class="action-bar__top">
 				<button class="action-bar__btn"
 					:title="sidebarCollapsed ? 'Show sidebar' : 'Hide sidebar'"
-					@click="sidebarCollapsed = !sidebarCollapsed">
+					@click="toggleSidebar">
 					<MenuIcon :size="20" />
 				</button>
 				<button class="action-bar__btn"
@@ -188,6 +188,10 @@
 			</div>
 		</NcAppContent>
 
+		<div v-if="isMobile && !sidebarCollapsed"
+			class="sidebar-backdrop"
+			@click="closeSidebar" />
+
 		<QuickSwitcher v-if="showQuickSwitcher"
 			:files="allFiles"
 			@select="onQuickSwitcherSelect"
@@ -308,7 +312,8 @@ export default {
 			graphData: null,
 			graphLoading: false,
 			vaultProperties: [],
-			sidebarCollapsed: false,
+			sidebarCollapsed: window.innerWidth < 1024,
+			windowWidth: window.innerWidth,
 			sidebarTab: 'files',
 			showQuickSwitcher: false,
 			showGraphSettings: false,
@@ -319,7 +324,19 @@ export default {
 		}
 	},
 
+	watch: {
+		isMobile(value) {
+			if (value && !this.sidebarCollapsed) {
+				this.sidebarCollapsed = true
+			}
+		},
+	},
+
 	computed: {
+		isMobile() {
+			return this.windowWidth < 1024
+		},
+
 		currentTitle() {
 			if (this.showQuery) return 'Query view'
 			if (this.showGraph) return 'Graph view'
@@ -376,14 +393,52 @@ export default {
 		}
 		document.addEventListener('keydown', this.onKeyDown)
 		this.$el.addEventListener('click', this.onGlobalClick)
+		window.addEventListener('resize', this.onResize)
+		this.$nextTick(() => this.setupInertOverride())
 	},
 
 	beforeDestroy() {
 		document.removeEventListener('keydown', this.onKeyDown)
 		this.$el.removeEventListener('click', this.onGlobalClick)
+		window.removeEventListener('resize', this.onResize)
+		if (this._inertObserver) {
+			this._inertObserver.disconnect()
+		}
 	},
 
 	methods: {
+		onResize() {
+			this.windowWidth = window.innerWidth
+		},
+
+		setupInertOverride() {
+			const nav = this.$el.querySelector('.app-navigation__content')
+			if (!nav) return
+			this._navEl = nav
+			this._inertObserver = new MutationObserver(() => this.updateNavInert())
+			this._inertObserver.observe(nav, { attributes: true, attributeFilter: ['inert'] })
+			this.updateNavInert()
+		},
+
+		updateNavInert() {
+			if (!this._navEl) return
+			if (this.isMobile && !this.sidebarCollapsed) {
+				this._navEl.removeAttribute('inert')
+				this._navEl.setAttribute('aria-hidden', 'false')
+			}
+		},
+
+		toggleSidebar() {
+			this.sidebarCollapsed = !this.sidebarCollapsed
+			if (this.isMobile && !this.sidebarCollapsed) {
+				this.$nextTick(() => this.updateNavInert())
+			}
+		},
+
+		closeSidebar() {
+			this.sidebarCollapsed = true
+		},
+
 		onKeyDown(e) {
 			if ((e.ctrlKey || e.metaKey) && e.key === 'o') {
 				e.preventDefault()
@@ -455,6 +510,9 @@ export default {
 			this.showGraph = false
 			this.showGraphSettings = false
 			this.loadFile(path)
+			if (this.isMobile) {
+				this.closeSidebar()
+			}
 		},
 
 		async loadFile(path) {
@@ -754,6 +812,20 @@ export default {
 #content.app-obsidian_viewer .app-navigation-toggle {
 	display: none !important;
 }
+
+@media (max-width: 1023px) {
+	#content.app-obsidian_viewer .app-navigation {
+		inset-inline-start: 44px !important;
+		width: calc(100vw - 44px) !important;
+		max-width: 300px !important;
+		z-index: 2000 !important;
+		box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+	}
+
+	#content.app-obsidian_viewer:not(.sidebar-collapsed) .app-navigation.app-navigation--close {
+		margin-inline-start: 0 !important;
+	}
+}
 </style>
 
 <style scoped>
@@ -887,5 +959,15 @@ export default {
 	display: flex;
 	justify-content: center;
 	padding: 20px;
+}
+
+.sidebar-backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 1999;
 }
 </style>
