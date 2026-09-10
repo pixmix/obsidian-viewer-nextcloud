@@ -91,7 +91,7 @@ The `docs/` folder is an Obsidian vault — open it in Obsidian for the best rea
 
 ## How this was built
 
-This project is a collaboration between [Pietro Mincuzzi](mailto:claude.com@mgzllc.com) and Claude (Anthropic's AI), working through [Claude Code](https://claude.com/claude-code). The human defined requirements, made design decisions, and tested everything in the browser. The AI wrote the code, maintained documentation, and handled technical implementation. Total human investment: ~24 hours; AI-active session time within that: ~15 hours.
+This project is a collaboration between Pietro Mincuzzi and Claude (Anthropic's AI), working through [Claude Code](https://claude.com/claude-code). The human defined requirements, made design decisions, and tested everything in the browser. The AI wrote the code, maintained documentation, and handled technical implementation. Total human investment: ~24 hours; AI-active session time within that: ~15 hours.
 
 See [docs/Human-AI Collaboration.md](docs/Human-AI%20Collaboration.md) for the full story of how the partnership worked.
 
@@ -103,6 +103,12 @@ See [docs/Human-AI Collaboration.md](docs/Human-AI%20Collaboration.md) for the f
 | PHP | 8.x |
 | Node.js (build only) | 20.x |
 
+## Contact
+
+Bug reports, questions and feature requests belong in [GitHub Issues](https://github.com/pixmix/obsidian-viewer-nextcloud/issues). That is the watched channel; please do not use personal email.
+
 ## Licence
 
-AGPL-3.0 — same as Nextcloud.
+Copyright © 2026 Pietro Mincuzzi.
+
+AGPL-3.0-or-later — same as Nextcloud. The full licence text is in [LICENCE](LICENCE).
