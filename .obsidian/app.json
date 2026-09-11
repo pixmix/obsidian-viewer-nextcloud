@@ -1,0 +1,11 @@
+{
+  "userIgnoreFilters": [
+    "tools/",
+    ".claude/",
+    ".git/",
+    "/home/pm/Nextcloud/Projects/DE-MGZ-MANAGEMENT/INFRASTRUCTURE/NEXT-OBSIDIAN/sandbox_vault",
+    "/home/pm/Nextcloud/Projects/DE-MGZ-MANAGEMENT/INFRASTRUCTURE/NEXT-OBSIDIAN/test_vault",
+    "/home/pm/Nextcloud/Projects/DE-MGZ-MANAGEMENT/INFRASTRUCTURE/NEXT-OBSIDIAN/theme_dev_vault",
+    "/home/pm/Nextcloud/Projects/DE-MGZ-MANAGEMENT/INFRASTRUCTURE/NEXT-OBSIDIAN/custom_apps"
+  ]
+}

@@ -22,3 +22,24 @@ Thumbs.db
 # Sandbox / scratch vaults used during development (not test_vault)
 sandbox_vault/
 theme_dev_vault/
+
+# ── added by ptah/1.13 on 2026-09-11 ──
+# Session-generated utilities cache
+tools/scratch/
+
+# Obsidian vault — the vault CONFIG is tracked ON PURPOSE: the project root IS
+# the vault, so a fresh clone must open as a working vault (userIgnoreFilters
+# included). Only machine-specific workspace state is ignored. Ignoring
+# .obsidian/ wholesale means a clone of this project is NOT a vault, and nothing
+# fails locally to tell you — see bbs n-271 / n-273.
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.obsidian/cache/
+.obsidian/plugins/*/data.json
+.trash/
+
+# Secrets — never commit credentials
+*.key
+*apikey*
+.env
