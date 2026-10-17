@@ -23,7 +23,11 @@ Thumbs.db
 sandbox_vault/
 theme_dev_vault/
 
-# ── added by ptah/1.13 on 2026-09-11 ──
+# project-gitignore/2 — the mesh minimum a project must ignore (ptah). Keep this line:
+# a copy without a version is a silent fork the moment it is made. `ptah verify <root>`
+# MEASURES every rule below with `git check-ignore`, so wording is yours to change and
+# the effect is not. Re-take the current block with: ptah gitignore-block
+
 # Session-generated utilities cache
 tools/scratch/
 
@@ -43,3 +47,23 @@ tools/scratch/
 *.key
 *apikey*
 .env
+
+# THE AUTHOR'S OPT-OUT — the git twin of Nextcloud's *.nxl (c-011/operator, n-822).
+# Name a file *.gtxcl (or *.gtxcl.<anything>) to DECLARE that it must never be
+# stored in git, instead of leaving a sweeper to INFER it from a directory name.
+# It lives HERE and not in ~/.config/git/ignore because a global ignore does not
+# travel with a clone: the marker is only worth using if every clone honours it.
+# ⚠️ IT ONLY WORKS BEFORE THE FIRST COMMIT. Renaming an ALREADY-TRACKED file to
+# *.gtxcl does NOT untrack it — `git add -A` keeps committing it and the old name's
+# content stays in the history for ever (measured, ptah/1.22). To retire a tracked
+# file: `git rm --cached <f>` first, and treat anything already committed as public.
+# `ptah verify` FAILS on a tracked *.gtxcl, because that file says "never store me"
+# while being stored.
+# ⇒ *.nxl is the same in this respect — measured by c-001 (n-827): adding a pattern
+# unsyncs nothing that is already on the server. NEITHER MARKER RETRACTS, and that is
+# a decision rather than a limitation: a marker that retracts is a marker that DELETES,
+# and where the server holds the only copy the retraction destroys the thing instead of
+# unpublishing it. Both markers declare BEFORE the first commit/sync; cleaning up after
+# stays a manual act, on purpose.
+*.gtxcl
+*.gtxcl.*
