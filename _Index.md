@@ -7,7 +7,7 @@ Map of content for this vault. The project root **is** the vault — including t
 ## Documents
 
 - [[README]] — what the app does, features, requirements, installation, contact and licence (the public front page on GitHub)
-- [[docs/Index|Documentation]] — the full documentation set, itself an Obsidian vault
+- [[Index|Documentation]] — the full documentation set, itself an Obsidian vault
 - `LICENCE` — AGPL-3.0-or-later, full text
 - `Contacts.md` — everyone this project writes to; read it before composing any outbound message. **Local only, never in git**: the repository is public and the file may hold contacts that are not.
 
@@ -15,31 +15,31 @@ Map of content for this vault. The project root **is** the vault — including t
 
 ### Getting started
 
-- [[docs/Development Setup|Development Setup]] — Docker environment, Node.js, first build
-- [[docs/Deployment|Deployment]] — packaging and installing on a production Nextcloud
-- [[docs/Maintenance|Maintenance]] — version bumps, cache clearing, troubleshooting
+- [[Development Setup]] — Docker environment, Node.js, first build
+- [[Deployment]] — packaging and installing on a production Nextcloud
+- [[Maintenance]] — version bumps, cache clearing, troubleshooting
 
 ### Architecture and design
 
-- [[docs/Architecture|Architecture]] — backend, frontend, data flow, component map
-- [[docs/Design Philosophy|Design Philosophy]] — integration over duplication, interface boundaries
-- [[docs/Performance|Performance]] — server, client and network breakdown, profiling data
-- [[docs/Known Limitations|Known Limitations]] — what the viewer does not do, and why
+- [[Architecture]] — backend, frontend, data flow, component map
+- [[Design Philosophy]] — integration over duplication, interface boundaries
+- [[Performance]] — server, client and network breakdown, profiling data
+- [[Known Limitations]] — what the viewer does not do, and why
 
 ### Features
 
-- [[docs/Rendering Features|Rendering Features]] — markdown, wiki-links, embeds, callouts, Mermaid, LaTeX
-- [[docs/Graph View|Graph View]] — force-directed graph, settings, physics model
-- [[docs/Search|Search]] — the Obsidian search language, in JS and PHP
-- [[docs/Query API|Query API]] — metadata queries and external integration
+- [[Rendering Features]] — markdown, wiki-links, embeds, callouts, Mermaid, LaTeX
+- [[Graph View]] — force-directed graph, settings, physics model
+- [[Search]] — the Obsidian search language, in JS and PHP
+- [[Query API]] — metadata queries and external integration
 
 ### Project
 
-- [[docs/Motivation|Motivation]] — why the viewer exists
-- [[docs/For Maintainers|For Maintainers]] — what a maintainer needs to know first
-- [[docs/Testing|Testing]] — how the app is tested
-- [[docs/Human-AI Collaboration|Human-AI Collaboration]] — how the app was built
-- [[docs/Project Journal|Project Journal]] — development history
+- [[Motivation]] — why the viewer exists
+- [[For Maintainers]] — what a maintainer needs to know first
+- [[Testing]] — how the app is tested
+- [[Human-AI Collaboration]] — how the app was built
+- [[Project Journal]] — development history
 
 ### Development vaults
 
