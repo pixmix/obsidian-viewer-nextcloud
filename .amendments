@@ -1,0 +1,7 @@
+# What this project has applied — the LAST version of each mesh standard.
+# A position, not a history. `amend check` compares it to ~/.claude/amendments.tsv
+# and prints the ACTION for every version above it. Recording is a CLAIM that the
+# document was updated; the tool cannot verify it.
+id	version
+project-gitignore	2
+vault-ignore-filters	1
