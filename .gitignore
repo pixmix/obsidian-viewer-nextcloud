@@ -67,3 +67,7 @@ tools/scratch/
 # stays a manual act, on purpose.
 *.gtxcl
 *.gtxcl.*
+
+# Contacts.md is LOCAL ONLY: this repository is public and the file may hold
+# contacts that are not. It stays at the project root, untracked.
+Contacts.md
